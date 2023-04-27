@@ -2,6 +2,7 @@ import React from "react";
 import "../../styles/home.css";
 import { CharacterCard } from "../component/CharacterCard";
 import { PlanetCard } from "../component/PlanetCard";
+import { VehicleCard } from "../component/VehicleCard";
 
 export const Home = () => (
 	<>
@@ -12,6 +13,10 @@ export const Home = () => (
 		<h1>Planets</h1>
 		<div className="container overflow-scroll my-3">
 			<PlanetCard/>
+		</div>
+		<h1>Vehicles</h1>
+		<div className="container overflow-scroll my-3">
+			<VehicleCard/>
 		</div>
 	</>
 );

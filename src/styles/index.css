@@ -6,19 +6,21 @@
 }
 .footer{
     font-family: "Lobster", sans-serif;
+    height: 90px;
 }
 body{
-    background: linear-gradient(#273d5f, #32119c);
+    background: linear-gradient(#273d5f, #32119c)fixed no-repeat;
 }
 .navbar{
     background: linear-gradient(1.25turn ,#3851b9, #32119c);
 }
 .wholecard{
     background: linear-gradient(217deg, rgba(100, 154, 201, 0.8), rgba(255,0,0,0)),            
-                linear-gradient(127deg, rgba(253, 255, 253, 0.8), rgba(0,255,0,0))
+                linear-gradient(127deg, rgba(226, 223, 252, 0.8), rgba(0,255,0,0))
 }
 .list-group-item{
-    background-color: rgba(63, 98, 162, 0.959);
+    background: linear-gradient(217deg, rgba(100, 154, 201, 0.8), rgba(255,0,0,0)),            
+                linear-gradient(127deg, rgba(226, 223, 252, 0.8), rgba(0,255,0,0))
 }
 li{
     font-family: "Silkscreen", sans-serif;
