@@ -7,3 +7,19 @@
 .footer{
     font-family: "Lobster", sans-serif;
 }
+body{
+    background: linear-gradient(#273d5f, #32119c);
+}
+.navbar{
+    background: linear-gradient(1.25turn ,#3851b9, #32119c);
+}
+.wholecard{
+    background: linear-gradient(217deg, rgba(100, 154, 201, 0.8), rgba(255,0,0,0)),            
+                linear-gradient(127deg, rgba(253, 255, 253, 0.8), rgba(0,255,0,0))
+}
+.list-group-item{
+    background-color: rgba(63, 98, 162, 0.959);
+}
+li{
+    font-family: "Silkscreen", sans-serif;
+}

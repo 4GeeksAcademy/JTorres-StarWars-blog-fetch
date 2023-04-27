@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
 export const CharacterCard = () =>(
-    <div className="card w-50 h-25">
+    <div className="wholecard card w-50 h-25">
         <img src="https://fastly.picsum.photos/id/965/400/200.jpg?hmac=pUxpiyGtnQOmA8jpiS9pzxoiFMbLfAX7d590H8q-OOI" className="card-img-top" alt="CharacterImg"></img>
         <div className="card-body">
-            <h5 className="card-title">Cahracter Name</h5>
+            <h5 className="card-title">Character Name</h5>
             <p className="card-text">Nerdy stuffs</p>
         </div>
         <ul className="list-group list-group-flush">
@@ -13,8 +13,8 @@ export const CharacterCard = () =>(
             <li className="list-group-item">Trait 3</li>
         </ul>
         <div className="card-body ms-auto px-auto">
-            <a href="#" className="btn btn-info mx-4">Nerd mode Here</a>
-            <a href="#" className="btn btn-warning">♡</a>
+            <a href="#" className="btn btn-outline-info mx-4">Nerd mode Here</a>
+            <a href="#" className="btn btn-outline-warning">♡</a>
         </div>
     </div>
 );
