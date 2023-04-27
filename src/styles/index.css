@@ -1,3 +1,9 @@
 /* 
     General Styles
 */
+.logo{
+    font-family: "Silkscreen", sans-serif;
+}
+.footer{
+    font-family: "Lobster", sans-serif;
+}
