@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-export const PlanetCard = () =>(
+export const FilmCard = () =>(
     <div className="wholecard card w-50 h-25">
         <img src="https://fastly.picsum.photos/id/965/400/200.jpg?hmac=pUxpiyGtnQOmA8jpiS9pzxoiFMbLfAX7d590H8q-OOI" className="card-img-top" alt="CharacterImg"></img>
         <div className="card-body">
-            <h5 className="card-title">Planet Name</h5>
+            <h5 className="card-title">Film Name</h5>
             <p className="card-text">Nerdy stuffs</p>
         </div>
         <ul className="list-group list-group-flush">
@@ -17,4 +17,4 @@ export const PlanetCard = () =>(
             <a href="#" className="btn btn-outline-warning">♡</a>
         </div>
     </div>
-)
+);
