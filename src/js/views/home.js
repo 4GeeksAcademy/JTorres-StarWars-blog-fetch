@@ -11,30 +11,30 @@ export const Home = () => {
 	const {store, actions} = useContext(Context)
 
 	useEffect(()=>{
-		actions.fetchStarWars("https://www.swapi.tech/api/vehicles")
-		actions.fetchStarWars("https://www.swapi.tech/api/people")
-		actions.fetchStarWars("https://www.swapi.tech/api/planets")
-		// actions.fetchStarWars("https://www.swapi.tech/api/films/")
-		actions.fetchStarWars("https://www.swapi.tech/api/species/")
-		actions.fetchStarWars("https://www.swapi.tech/api/starships/")
+		actions.fetchStarWars("vehicles")
+		actions.fetchStarWars("people")
+		actions.fetchStarWars("planets")
+		actions.fetchStarWars("films")
+		actions.fetchStarWars("species")
+		actions.fetchStarWars("starships")
 	}, [])
 	return(
 	<>
 		<h1>Characters!</h1>
-		<div className="container overflow-scroll my-3">
-			<CharacterCard/>
+		<div className="container-fluid overflow-scroll my-3">
+			<CharacterCard widget="people"/>
 		</div>
 		<h1>Planets!</h1>
-		<div className="container overflow-scroll my-3">
-			<PlanetCard/>
+		<div className="container-fluid overflow-scroll my-3">
+			<PlanetCard widget="planets"/>
 		</div>
 		<h1>Vehicles!</h1>
-		<div className="container overflow-scroll my-3">
-			<VehicleCard/>
+		<div className="container-fluid overflow-scroll my-3">
+			<VehicleCard widget="vehicles"/>
 		</div>
 		<h1>Films!</h1>
-		<div className="container overflow-scroll my-3">
-			<FilmCard/>
+		<div className="container-fluid overflow-scroll my-3">
+			<FilmCard widget="films"/>
 		</div>
 		<NerdModal/>
 	</>

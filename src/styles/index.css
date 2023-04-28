@@ -17,7 +17,11 @@ body{
 }
 .wholecard{
     background: linear-gradient(217deg, rgba(100, 154, 201, 0.8), rgba(255,0,0,0)),            
-                linear-gradient(127deg, rgba(226, 223, 252, 0.8), rgba(0,255,0,0))
+                linear-gradient(127deg, rgba(226, 223, 252, 0.8), rgba(0,255,0,0));
+    overflow: auto !important;
+    max-width: 300px;
+    max-height: 450px;
+    margin-left: 70px;
 }
 .list-group-item{
     background: linear-gradient(217deg, rgba(100, 154, 201, 0.8), rgba(255,0,0,0)),            
