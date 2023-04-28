@@ -11,7 +11,12 @@ export const Home = () => {
 	const {store, actions} = useContext(Context)
 
 	useEffect(()=>{
-		actions.fetchStarWars("characters")
+		actions.fetchStarWars("https://www.swapi.tech/api/vehicles")
+		actions.fetchStarWars("https://www.swapi.tech/api/people")
+		actions.fetchStarWars("https://www.swapi.tech/api/planets")
+		// actions.fetchStarWars("https://www.swapi.tech/api/films/")
+		actions.fetchStarWars("https://www.swapi.tech/api/species/")
+		actions.fetchStarWars("https://www.swapi.tech/api/starships/")
 	}, [])
 	return(
 	<>
