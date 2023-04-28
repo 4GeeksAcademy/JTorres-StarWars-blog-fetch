@@ -7,6 +7,7 @@
 .footer{
     font-family: "Lobster", sans-serif;
     height: 90px;
+    color: antiquewhite;
 }
 body{
     background: linear-gradient(#273d5f, #32119c)fixed no-repeat;

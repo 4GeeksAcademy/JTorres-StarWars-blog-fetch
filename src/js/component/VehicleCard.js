@@ -13,7 +13,7 @@ export const VehicleCard = () =>(
             <li className="list-group-item">Trait 3</li>
         </ul>
         <div className="card-body ms-auto px-auto">
-            <a href="#" className="btn btn-outline-info mx-4">Nerd Mode</a>
+        <a href="#" className="btn btn-outline-info mx-4" data-bs-toggle="modal" data-bs-target="#nerdModal">Nerd Mode</a>
             <a href="#" className="btn btn-outline-warning">♡</a>
         </div>
     </div>
