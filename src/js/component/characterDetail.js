@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useContext, Component } from "react";
 import { useParams } from "react-router-dom";
+import "../../styles/home.css";
 
 
-export const NerdModal = () =>{
+export const CharacterDetail = () =>{
 
   const {planetId} = useParams()
-
-return <div className="modal fade" id="nerdModal" tabIndex="-1" aria-labelledby="nerdModal" aria-hidden="true">
-  <div className="modal-dialog">
+  return (
+    <div className="modal-dialog">
     <div className="modal-content">
       <div className="modal-header">
-        <h1 className="modal-title fs-5" id="nerdModalLabel">Item Name</h1>
+        <h5 className="fs-1 modal-title" id="nerdModalLabel">Item Name ID:{planetId}</h5>
         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div className="modal-body">
@@ -25,5 +25,6 @@ return <div className="modal fade" id="nerdModal" tabIndex="-1" aria-labelledby=
       </div>
     </div>
   </div>
-</div>
-}
+)};
+
+  export default CharacterDetail;

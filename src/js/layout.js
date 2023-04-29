@@ -9,6 +9,8 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { NerdModal } from "./component/NerdModal";
+import CharacterDetail from "./component/characterDetail";
 
 //create your first component
 const Layout = () => {
@@ -26,6 +28,7 @@ const Layout = () => {
 						<Route path="/demo" element={<Demo />} />
 						<Route path="/single/:theid" element={<Single />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
+						<Route path ="/people/:planetId" element={<CharacterDetail />} />
 					</Routes>
 					<Footer />
 				</ScrollToTop>
