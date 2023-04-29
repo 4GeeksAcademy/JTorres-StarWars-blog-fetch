@@ -4,7 +4,10 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			
+			people:[],
+			planets:[],
+			vehicles:[],
+			films:[]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction

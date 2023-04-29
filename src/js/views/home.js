@@ -22,11 +22,15 @@ export const Home = () => {
 	<>
 		<h1>Characters!</h1>
 		<div className="container-fluid overflow-scroll my-3">
-			<CharacterCard widget="people"/>
+			<CharacterCard 
+			widget="people"
+			/>
 		</div>
 		<h1>Planets!</h1>
 		<div className="container-fluid overflow-scroll my-3">
-			<PlanetCard widget="planets"/>
+			<PlanetCard 
+			widget="planets"
+			/>
 		</div>
 		<h1>Vehicles!</h1>
 		<div className="container-fluid overflow-scroll my-3">
@@ -34,7 +38,9 @@ export const Home = () => {
 		</div>
 		<h1>Films!</h1>
 		<div className="container-fluid overflow-scroll my-3">
-			<FilmCard widget="films"/>
+			<FilmCard 
+			widget="films"
+			/>
 		</div>
 		<NerdModal/>
 	</>

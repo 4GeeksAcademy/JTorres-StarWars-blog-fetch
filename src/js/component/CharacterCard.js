@@ -1,18 +1,21 @@
 import React, { Component, useContext } from "react";
 import { NerdModal } from "./NerdModal";
 import { Context } from "../store/appContext.js";
-
+// import PropTypes from "prop-types";
 
 export const CharacterCard = ({itemUrlTail}) =>{
 const {store, actions}= useContext(Context);
-
+// const {people, planets, vehicles, films} = store
+// (store.people)?.map(widget => ( 
+//  {store.people.map = (people) => (
 return <div className="overflow-auto d-flex">
-        {store[itemUrlTail]?.map(widget=>(
+       {store[itemUrlTail]?.map(widget=>(
             <>
-                <div key={widget.uid} className="wholecard card px-3">
-                    <img src="https://fastly.picsum.photos/id/965/400/200.jpg?hmac=pUxpiyGtnQOmA8jpiS9pzxoiFMbLfAX7d590H8q-OOI" className="card-img-top" alt="CharacterImg"></img>
+                <div key={people.uid} className="wholecard card px-3">
+                    <img src={widget.url} className="card-img-top" alt="CharacterImg"></img>
                     <div className="card-body">
                         <h5 className="card-title">{widget.name}</h5>
+                        {/* <h5 className="card-title">{people.name}</h5> */}
                         <p className="card-text">Nerdy stuffs</p>
                     </div>
                     <ul className="list-group list-group-flush">
@@ -30,3 +33,10 @@ return <div className="overflow-auto d-flex">
         
     </div>
 };
+export default CharacterCard;
+
+// CharacterCard.protoTypes = {
+//     name: PropTypes.string,
+//     uid: PropTypes.string,
+//     url: PropTypes.string
+// }
