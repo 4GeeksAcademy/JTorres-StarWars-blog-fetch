@@ -7,7 +7,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			people:[],
 			planets:[],
 			vehicles:[],
-			films:[]
+			films:[],
+			favorites:[]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -26,18 +27,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.error(error)
 				}
 			},
-			FavoriteChecked:async(widgetId, name)=>{
+			FavoriteChecked:(widgetId, itemName)=>{
 				let {favorites}=getStore()
 				if(!favorites.some(item=>item.id==widgetId)){
 					// if non exisitng then add
-					setStore({id: widgetId, name})
+					setStore({favorites:[...favorites, {id:widgetId, itemName}]})
+					console.log(store.favorites)
 				}
 				else{
 					//if exisitng then delete
 					let newFavorties=[...favorites]
-					let ItemIndex=favorites.findIndex(item=>item.id==widgetId)
-					newFavorties.splice(ItemIndex,1);
+					let itemIndex=favorites.findIndex(item=>item.id==widgetId)
+					newFavorties.splice(itemIndex,1);
 					setStore({favorties:newFavorties})
+					console.log(itemIndex)
+					console.log(favorites)
 				}
 			}	
 		}

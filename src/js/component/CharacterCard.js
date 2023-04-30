@@ -7,6 +7,9 @@ export const CharacterCard = ({widget}) =>{
 const {store, actions}= useContext(Context);
 // const {people, planets, vehicles, films} = store
 function verifyFavorite(){
+    // store=getstore()
+    // [...favorites]=store.favorites
+    // return [...favorites].some(item=>item.id==`${widget}/${item.uid}`)
     return store.favorites.some(item=>item.id==`${widget}/${item.uid}`)
 }
 
@@ -26,8 +29,16 @@ return(
                         <li className="list-group-item">Trait 3</li>
                     </ul>
                     <div className="cardFooter card-body ms-auto px-auto">
-                        <button className="btn btn-outline-info mx-4" data-bs-toggle="modal" data-bs-target="#nerdModal">Nerd Mode</button>
-                        <button className={`btn ${verifyFavorite?"btn-outline-warning":"btn-warning"}`} onClick={()=>actions.FavoriteChecked(`${widget}/${item.uid}`, item.name)}>♡</button>
+                        <button 
+                        className="btn btn-outline-info mx-4" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#nerdModal"
+                        >Nerd Mode</button>
+                        
+                        <button 
+                        className={`btn btn-${verifyFavorite()?"warning":"outline-warning"}`} 
+                        onClick={()=>actions.FavoriteChecked(`${widget}/${item.uid}`, item.name)}
+                        >♡</button>
                     </div>
                 </div>
         ))|| <h1>loading...</h1>}
