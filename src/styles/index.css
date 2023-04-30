@@ -19,11 +19,8 @@ body{
     background: linear-gradient(217deg, rgba(100, 154, 201, 0.8), rgba(255,0,0,0)),            
                 linear-gradient(127deg, rgba(226, 223, 252, 0.8), rgba(0,255,0,0));
     overflow: auto !important;
-    max-width: 300px;
-    max-height: 450px;
     margin-left: 70px;
     min-width: 300px;
-    min-height: 550px;
 }
 .list-group-item{
     background: linear-gradient(217deg, rgba(100, 154, 201, 0.8), rgba(255,0,0,0)),            
@@ -31,4 +28,8 @@ body{
 }
 li{
     font-family: "Silkscreen", sans-serif;
+}
+#card-general{
+    overflow-y: hidden;
+    overflow-x: auto;
 }

@@ -25,6 +25,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 				catch (error){
 					console.error(error)
 				}
+			},
+			FavoriteChecked:async(widgetId, name)=>{
+				let {favorites}=getStore()
+				if(!favorites.some(item=>item.id==widgetId)){
+					// if non exisitng then add
+					setStore({id: widgetId, name})
+				}
+				else{
+					//if exisitng then delete
+					let newFavorties=[...favorites]
+					let ItemIndex=favorites.findIndex(item=>item.id==widgetId)
+					newFavorties.splice(ItemIndex,1);
+					setStore({favorties:newFavorties})
+				}
 			}	
 		}
 	};

@@ -34,7 +34,9 @@ export const Home = () => {
 		</div>
 		<h1>Vehicles!</h1>
 		<div className="container-fluid overflow-scroll my-3">
-			<VehicleCard widget="vehicles"/>
+			<VehicleCard 
+			widget="vehicles"
+			/>
 		</div>
 		<h1>Films!</h1>
 		<div className="container-fluid overflow-scroll my-3">
