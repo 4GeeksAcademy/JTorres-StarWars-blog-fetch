@@ -12,15 +12,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
-			fetchStarWars:async(itemUrlTail) =>{
-				let fetchUrl = "https://www.swapi.tech/api/"+ itemUrlTail;
+			fetchStarWars:async(itemUrlTail, page = 1, limit = 21) =>{
+				let baseUrl = `https://www.swapi.tech/api/${itemUrlTail}?page=${page}&limit=${limit}`
 				try{
-					let response = await fetch(fetchUrl)
+					let response = await fetch(baseUrl)
 					if(!response.ok) return response.status
 
 					let data = await response.json()
 					let widget ={}
-					widget[itemUrlTail]=data.results
+					widget[itemUrlTail]=data[itemUrlTail=="films"?"result":"results"].map(item=>(
+							{...item, 
+								img:`https://starwars-visualguide.com/assets/img/${itemUrlTail=="people"?"characters":itemUrlTail}/${item.uid}.jpg`
+							}))
 					setStore(widget)
 				}
 				catch (error){
@@ -36,10 +39,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 				else{
 					//if exisitng then delete
-					let newFavorties=[...favorites]
+					let newFavorites=[...favorites]
 					let itemIndex=favorites.findIndex(item=>item.id==widgetId)
-					newFavorties.splice(itemIndex,1);
-					setStore({favorties:newFavorties})
+					newFavorites.splice(itemIndex,1);
+					setStore({favorites:newFavorites})
 					console.log(itemIndex)
 					console.log(favorites)
 				}
