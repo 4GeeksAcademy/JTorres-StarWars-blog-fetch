@@ -18,11 +18,12 @@ export const Navbar = () => {
 				<ul className="dropdown-menu">
 					{store.favorites.map((favorite, index)=>{
 						return(
-							<li key={index}><a className="dropdown-item"  href="#">{favorite.itemName}</a>
-							<button onClick={()=>{actions.deleteFavorite(favorite.itemName)}} type="button" className="btn btn-dark">X</button>
-							</li>
+							<div className="d-flex flex-row" key={index}>
+								<li key={index}><a className="dropdown-item d-flex flex-row overflow-hidden"  href="#">{favorite.itemName}</a></li>
+								<button onClick={()=>{actions.deleteFavorite(favorite.itemName)}} type="button" className="badge rounded-pill bg-info mx-auto">X</button>
+							</div>
 						)
-					})}
+					})||<p>How about adding favorites?</p>}
 				</ul>
 				</div>
 		</nav>
