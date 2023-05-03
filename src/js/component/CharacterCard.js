@@ -1,23 +1,21 @@
-import React, { Component, useContext } from "react";
+import React, { Component, useContext, useEffect } from "react";
 import { NerdModal } from "./NerdModal";
 import { Context } from "../store/appContext.js";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
 // import PropTypes from "prop-types";
 
 export const CharacterCard = ({widget}) =>{
     const {store, actions}= useContext(Context);
     // const {people, planets, vehicles, films} = store
     function verifyFavorite(itemId){
-        // store=getstore()
-        // [...favorites]=store.favorites
-        // return [...favorites].some(item=>item.id==`${widget}/${item.uid}`)
-        
         return store.favorites.some(item=>item.id==`${widget}/${itemId}`)
-        // store undefined error
     }
     
     
     return( 
-        <div className="overflow-auto d-flex">
+        <div className="d-flex">
             {store[widget]?.map(item=>(
                     <div key={item.uid} className="wholecard card">
                         <img src={item.img} className="card-img-top mx-0 p-0" alt="CharacterImg"></img>
@@ -31,11 +29,13 @@ export const CharacterCard = ({widget}) =>{
                             <li className="list-group-item">Trait 3</li>
                         </ul>
                         <div className="cardFooter card-body ms-auto px-auto">
+                            <Link to={`${widget}/${item.uid}`}>
                             <button 
                             className="btn btn-outline-info mx-4" 
                             data-bs-toggle="modal" 
                             data-bs-target="#nerdModal"
                             >Nerd Mode</button>
+                            </Link>
                             
                             <button 
                             className={`btn btn-${verifyFavorite(item.uid)?"warning":"outline-warning"}`} 

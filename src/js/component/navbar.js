@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext.js";
 
 export const Navbar = () => {
+	const {store, actions} = useContext(Context);
+
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
 			<div className="logo">
@@ -13,13 +16,20 @@ export const Navbar = () => {
 					<strong>Favorites UwU</strong>
 				</button>
 				<ul className="dropdown-menu">
-					<li><a className="dropdown-item" href="#">Fav1</a></li>
-					<li><a className="dropdown-item" href="#">Fav 2</a></li>
-					<li><a className="dropdown-item" href="#">Fav 3</a></li>
-					<li><hr className="dropdown-divider"/></li>
-					<li><a className="dropdown-item" href="#">Clear All</a></li>
+					{store.favorites.map((favorite, index)=>{
+						return(
+							<li key={index}><a className="dropdown-item"  href="#">{favorite.itemName}</a>
+							<button onClick={()=>{actions.deleteFavorite(favorite.itemName)}} type="button" className="btn btn-dark">X</button>
+							</li>
+						)
+					})}
 				</ul>
 				</div>
 		</nav>
 	);
 };
+{/* <li><a className="dropdown-item" href="#">Fav1</a></li>
+<li><a className="dropdown-item" href="#">Fav 2</a></li>
+<li><a className="dropdown-item" href="#">Fav 3</a></li>
+<li><hr className="dropdown-divider"/></li>
+<li><a className="dropdown-item" href="#">Clear All</a></li> */}

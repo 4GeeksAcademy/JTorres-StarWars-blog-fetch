@@ -17,7 +17,7 @@ export const VehicleCard = ({widget}) =>{
     
     
     return( 
-        <div className="overflow-auto d-flex">
+        <div className="d-flex">
             {store[widget]?.map(item=>(
                     <div key={item.uid} className="wholecard card">
                         <img src={item.img} className="card-img-top mx-0 p-0" alt="CharacterImg"></img>

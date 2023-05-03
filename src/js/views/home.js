@@ -21,7 +21,7 @@ export const Home = () => {
 	return(
 	<>
 		<h1>Characters!</h1>
-		<div className="container-fluid overflow-scroll my-3">
+		<div className="container-fluid overflow-scroll">
 			<CharacterCard 
 			widget="people"
 			/>
