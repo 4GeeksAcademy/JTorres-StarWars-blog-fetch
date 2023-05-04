@@ -30,6 +30,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.error(error)
 				}
 			},
+			fetchStarWarsDetails:async(itemUrlTail)=>{
+				let baseUrl = `https://www.swapi.tech/api/${itemUrlTail}`
+				try{
+					let response = await fetch(baseUrl)
+					if(!response.ok) return response.status
+
+					let data = await response.json()
+					setStore(data)
+				}
+				catch (error){
+					console.error(error)
+				}
+			},
 			FavoriteChecked:(widgetId, itemName)=>{
 				let {favorites}=getStore()
 				if(!favorites.some(item=>item.id==widgetId)){
