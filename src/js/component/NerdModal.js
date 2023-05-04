@@ -6,7 +6,7 @@ export const NerdModal = () =>{
 
   const {planetId} = useParams()
 
-return <div className="modal fade" id="nerdModal" tabIndex="-1" aria-labelledby="nerdModal" aria-hidden="true">
+return <div className="modal fade" id="nerdModal" tabIndex="-1" aria-labelledby="nerdModal">
   <div className="modal-dialog">
     <div className="modal-content">
       <div className="modal-header">

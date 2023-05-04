@@ -1,19 +1,18 @@
-import React, { Component, useContext } from "react";
+import React, { Component, useContext, useEffect } from "react";
 import { NerdModal } from "./NerdModal";
 import { Context } from "../store/appContext.js";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
 // import PropTypes from "prop-types";
 
-export const PlanetCard = ({widget}) =>{
+export const SpeciesCard = ({widget}) =>{
     const {store, actions}= useContext(Context);
     // const {people, planets, vehicles, films} = store
     function verifyFavorite(itemId){
-        // store=getstore()
-        // [...favorites]=store.favorites
-        // return [...favorites].some(item=>item.id==`${widget}/${item.uid}`)
-        
         return store.favorites.some(item=>item.id==`${widget}/${itemId}`)
-        // store undefined error
     }
+
     function imgError(e){
         e.target.src="https://starwars-visualguide.com/assets/img/placeholder.jpg"
     }
@@ -34,11 +33,13 @@ export const PlanetCard = ({widget}) =>{
                             <li className="list-group-item">Trait 3</li>
                         </ul>
                         <div className="cardFooter card-body ms-auto px-auto">
+                            <Link to={`${widget}/${item.uid}`}>
                             <button 
                             className="btn btn-outline-info mx-4" 
                             data-bs-toggle="modal" 
                             data-bs-target="#nerdModal"
                             >Nerd Mode</button>
+                            </Link>
                             
                             <button 
                             className={`btn btn-${verifyFavorite(item.uid)?"warning":"outline-warning"}`} 
@@ -50,4 +51,13 @@ export const PlanetCard = ({widget}) =>{
                 
         </div>
         )};
-export default PlanetCard;
+export default SpeciesCard;
+
+// CharacterCard.protoTypes = {
+//     name: PropTypes.string,
+//     uid: PropTypes.string,/
+//     url: PropTypes.string
+// }
+
+// (store.people)?.map(widget => ( 
+//  {store.people.map = (people) => (

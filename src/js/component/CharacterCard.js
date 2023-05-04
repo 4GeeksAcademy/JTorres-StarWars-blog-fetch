@@ -12,13 +12,16 @@ export const CharacterCard = ({widget}) =>{
     function verifyFavorite(itemId){
         return store.favorites.some(item=>item.id==`${widget}/${itemId}`)
     }
+    function imgError(e){
+        e.target.src="https://starwars-visualguide.com/assets/img/placeholder.jpg"
+    }
     
     
     return( 
         <div className="d-flex">
             {store[widget]?.map(item=>(
                     <div key={item.uid} className="wholecard card">
-                        <img src={item.img} className="card-img-top mx-0 p-0" alt="CharacterImg"></img>
+                        <img src={item.img} onError={imgError} className="card-img-top mx-0 p-0" alt="CharacterImg"></img>
                         <div className="cardTitle card-body">
                             <h5 className="card-title">{item.name}</h5>
                             <p className="card-text">Nerdy stuffs</p>
@@ -32,8 +35,6 @@ export const CharacterCard = ({widget}) =>{
                             <Link to={`${widget}/${item.uid}`}>
                             <button 
                             className="btn btn-outline-info mx-4" 
-                            data-bs-toggle="modal" 
-                            data-bs-target="#nerdModal"
                             >Nerd Mode</button>
                             </Link>
                             

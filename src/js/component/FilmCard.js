@@ -5,6 +5,7 @@ import { Context } from "../store/appContext.js";
 
 export const FilmCard = ({widget}) =>{
     const {store, actions}= useContext(Context);
+    const itemUrlTail = 
     // const {people, planets, vehicles, films} = store
     function verifyFavorite(itemId){
         // store=getstore()
@@ -14,7 +15,13 @@ export const FilmCard = ({widget}) =>{
         return store.favorites.some(item=>item.id==`${widget}/${itemId}`)
         // store undefined error
     }
-    
+    function imgError(e){
+        e.target.src="https://starwars-visualguide.com/assets/img/placeholder.jpg"
+    }
+    useEffect(()=>{
+        actions.fetchStarWars(widget)
+        actions.fetchStarWars(itemUrlTail)
+        }, [])
     
     return( 
         <div className="d-flex">
@@ -22,7 +29,7 @@ export const FilmCard = ({widget}) =>{
                     <div key={item.uid} className="wholecard card">
                         <img src={item.img} className="card-img-top mx-0 p-0" alt="CharacterImg"></img>
                         <div className="cardTitle card-body">
-                            <h5 className="card-title">{item.name}</h5>
+                            <h5 className="card-title">{item.description}</h5>
                             <p className="card-text">Nerdy stuffs</p>
                         </div>
                         <ul className="list-group list-group-flush">
