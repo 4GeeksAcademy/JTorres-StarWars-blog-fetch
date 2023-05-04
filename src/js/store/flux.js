@@ -1,3 +1,4 @@
+import { element } from "prop-types";
 
 
 
@@ -8,7 +9,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets:[],
 			vehicles:[],
 			films:[],
-			favorites:[]
+			favorites:[],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -30,14 +31,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.error(error)
 				}
 			},
-			fetchStarWarsDetails:async(itemUrlTail)=>{
+			fetchStarWarsDetails:async(itemUrlTail, widget, Id)=>{
 				let baseUrl = `https://www.swapi.tech/api/${itemUrlTail}`
+				let imgUrl = `https://starwars-visualguide.com/assets/img/${itemUrlTail}/.jpg`
 				try{
 					let response = await fetch(baseUrl)
 					if(!response.ok) return response.status
 
 					let data = await response.json()
-					setStore(data)
+					let element = {}
+					element[Id] = {...data.result.properties, img:`https://starwars-visualguide.com/assets/img/${widget=="people"?"characters":widget}/${Id}.jpg`}
+					setStore({data:element})
+					console.log(data)
 				}
 				catch (error){
 					console.error(error)

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext, Component } from "react";
 import { useParams } from "react-router-dom";
 import "../../styles/home.css";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 
 export const CharacterDetail = () =>{
@@ -9,13 +10,11 @@ export const CharacterDetail = () =>{
   const {widget, peopleId} = useParams()
   const itemUrlTail = widget+"/"+peopleId;
   const index = store.people.find(item=>item.id==peopleId)
-  const [data, setData] = useState()
+  const data = store.data && store.data[peopleId]
 
   useEffect(()=>{
     actions.fetchStarWars(widget)
-		actions.fetchStarWarsDetails(itemUrlTail).then(()=>{
-      setData(store.people.find(item=>item.id==peopleId));
-    })
+		actions.fetchStarWarsDetails(itemUrlTail, widget, peopleId)
 	}, [])
 
   function imgError(e){
@@ -24,8 +23,6 @@ export const CharacterDetail = () =>{
 
   return (
     <div className="container">
-       {/* {store[index].map(item=>( */}
-       {/* {store[widget]?.find(people=>peopleId==people.uid)(item=>( */}
         {!data?<h1>
           Cargando...
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-brush" viewBox="0 0 16 16">
@@ -33,11 +30,12 @@ export const CharacterDetail = () =>{
           </svg></h1>:(<div>
           <h1>{data.name}</h1>
           <p>{data.description}</p>
-          <img src={data.img} onError={imgError}></img>
+          <img className="d-flex justify-content-center" src={data.img} onError={imgError}></img>
           <ul className="list-group list-group-flush">
-              <li className="list-group-item">{data.eye_color}</li>
+              <li className="list-group-item"><p>Eye Color: {data.eye_color}</p></li>
               <li className="list-group-item">{data.hair_color}</li>
               <li className="list-group-item">{data.skin_color}</li>
+              <li className="list-group-item"></li>
           </ul>
           <div className="cardFooter card-body ms-auto px-auto">
               <Link to="/">
