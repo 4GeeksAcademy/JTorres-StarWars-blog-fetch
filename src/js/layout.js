@@ -10,7 +10,12 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { NerdModal } from "./component/NerdModal";
-import CharacterDetail from "./component/characterDetail";
+import CharacterDetail from "./component/characterDetail.js";
+import StarshipsDetail from "./component/StarshipsDetail";
+import VehiclesDetail from "./component/VehiclesDetail";
+import PlanetDetail from "./component/PlanetDetail";
+import SpeciesDetail from "./component/SpeciesDetail";
+import FilmDetail from "./component/FilmDetail";
 
 //create your first component
 const Layout = () => {
@@ -25,10 +30,13 @@ const Layout = () => {
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route path="/demo" element={<Demo />} />
-						<Route path="/single/:theid" element={<Single />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
-						<Route path ="/:widget/:peopleId" element={<CharacterDetail />} />
+						<Route path ="/people/:peopleId" element={<CharacterDetail />} />
+						<Route path ="/starships/:shipId" element={<StarshipsDetail />} />
+						<Route path ="/vehicles/:vehicleId" element={<VehiclesDetail />} />
+						<Route path ="/planets/:planedId" element={<PlanetDetail />} />
+						<Route path ="/species/:speciesId" element={<SpeciesDetail />} />
+						<Route path ="/films/:speciesId" element={<FilmDetail />} />
 					</Routes>
 					<Footer />
 				</ScrollToTop>

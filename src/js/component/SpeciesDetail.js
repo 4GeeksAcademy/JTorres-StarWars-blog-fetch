@@ -5,7 +5,7 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
 
-export const CharacterDetail = () =>{
+export const SpeciesDetail = () =>{
   const {store, actions}= useContext(Context);
   const {widget, peopleId} = useParams()
   const itemUrlTail = widget+"/"+peopleId;
@@ -52,4 +52,4 @@ export const CharacterDetail = () =>{
   )};
    
     
-    export default CharacterDetail;
+    export default SpeciesDetail;

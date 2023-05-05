@@ -5,7 +5,7 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
 
-export const CharacterDetail = () =>{
+export const FilmDetail = () =>{
   const {store, actions}= useContext(Context);
   const {widget, peopleId} = useParams()
   const itemUrlTail = widget+"/"+peopleId;
@@ -40,7 +40,7 @@ export const CharacterDetail = () =>{
               <li className="list-group-item">{data.mass}</li>
               <li className="list-group-item">{data.name}</li>
               <h1>related Planet(s)</h1>
-              <img className="mx-auto px-auto" src={"https://starwars-visualguide.com/assets/img/planets/"+data.homeworld.slice(-2)+".jpg"} onError={imgError}></img>
+              <img className="mx-auto px-auto" src={"https://starwars-visualguide.com/assets/img/films/"+data.homeworld.slice(-2)+".jpg"} onError={imgError}></img>
           </ul>
           <div className="card-body">
               <Link to="/">
@@ -52,4 +52,4 @@ export const CharacterDetail = () =>{
   )};
    
     
-    export default CharacterDetail;
+    export default FilmDetail;

@@ -1,35 +1,29 @@
-import React, { Component, useContext } from "react";
+import React, { Component, useContext, useEffect } from "react";
 import { NerdModal } from "./NerdModal";
 import { Context } from "../store/appContext.js";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
 // import PropTypes from "prop-types";
 
 export const FilmCard = ({widget}) =>{
     const {store, actions}= useContext(Context);
-    const itemUrlTail = 
     // const {people, planets, vehicles, films} = store
     function verifyFavorite(itemId){
-        // store=getstore()
-        // [...favorites]=store.favorites
-        // return [...favorites].some(item=>item.id==`${widget}/${item.uid}`)
-        
         return store.favorites.some(item=>item.id==`${widget}/${itemId}`)
-        // store undefined error
     }
     function imgError(e){
         e.target.src="https://starwars-visualguide.com/assets/img/placeholder.jpg"
     }
-    useEffect(()=>{
-        actions.fetchStarWars(widget)
-        actions.fetchStarWars(itemUrlTail)
-        }, [])
+    
     
     return( 
         <div className="d-flex">
             {store[widget]?.map(item=>(
                     <div key={item.uid} className="wholecard card">
-                        <img src={item.img} className="card-img-top mx-0 p-0" alt="CharacterImg"></img>
+                        <img src={item.img} onError={imgError} className="card-img-top mx-0 p-0" alt="CharacterImg"></img>
                         <div className="cardTitle card-body">
-                            <h5 className="card-title">{item.description}</h5>
+                            <h5 className="card-title">{item.name}</h5>
                             <p className="card-text">Nerdy stuffs</p>
                         </div>
                         <ul className="list-group list-group-flush">
@@ -38,11 +32,11 @@ export const FilmCard = ({widget}) =>{
                             <li className="list-group-item">Trait 3</li>
                         </ul>
                         <div className="cardFooter card-body ms-auto px-auto">
+                            <Link to={`${widget}/${item.uid}`}>
                             <button 
                             className="btn btn-outline-info mx-4" 
-                            data-bs-toggle="modal" 
-                            data-bs-target="#nerdModal"
                             >Nerd Mode</button>
+                            </Link>
                             
                             <button 
                             className={`btn btn-${verifyFavorite(item.uid)?"warning":"outline-warning"}`} 

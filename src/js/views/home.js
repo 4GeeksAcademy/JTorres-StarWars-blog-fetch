@@ -7,6 +7,7 @@ import { FilmCard } from "../component/FilmCard";
 import { NerdModal } from "../component/NerdModal";
 import { Context } from "../store/appContext.js"
 import { SpeciesCard } from "../component/SpeciesCard.js";
+import StarshipsCard from "../component/StartshipsCard";
 
 export const Home = () => {
 	const {store, actions} = useContext(Context)
@@ -43,6 +44,18 @@ export const Home = () => {
 		<div className="container-fluid overflow-scroll my-3">
 			<SpeciesCard 
 			widget="species"
+			/>
+		</div>
+		<h1>Starships!</h1>
+		<div className="container-fluid overflow-scroll my-3">
+			<StarshipsCard 
+			widget="starships"
+			/>
+		</div>
+		<h1>Films!</h1>
+		<div className="container-fluid overflow-scroll my-3">
+			<FilmCard 
+			widget="films"
 			/>
 		</div>
 		<NerdModal/>
