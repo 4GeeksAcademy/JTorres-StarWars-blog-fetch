@@ -17,6 +17,7 @@ export const CharacterCard = ({widget}) =>{
     }
     
     
+    
     return( 
         <div className="d-flex">
             {store[widget]?.map(item=>(

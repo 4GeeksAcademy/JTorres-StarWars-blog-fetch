@@ -33,3 +33,6 @@ li{
     overflow-y: hidden;
     overflow-x: auto;
 }
+.description{
+    font-family: "Lobster", sans-serif;
+}

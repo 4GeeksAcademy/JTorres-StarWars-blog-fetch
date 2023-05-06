@@ -36,7 +36,7 @@ const Layout = () => {
 						<Route path ="/vehicles/:vehicleId" element={<VehiclesDetail />} />
 						<Route path ="/planets/:planedId" element={<PlanetDetail />} />
 						<Route path ="/species/:speciesId" element={<SpeciesDetail />} />
-						<Route path ="/films/:speciesId" element={<FilmDetail />} />
+						<Route path ="/films/:filmId" element={<FilmDetail />} />
 					</Routes>
 					<Footer />
 				</ScrollToTop>

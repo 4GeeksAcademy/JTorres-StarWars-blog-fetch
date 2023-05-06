@@ -41,6 +41,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 					let data = await response.json()
 					let element = {}
 					element[Id] = {...data.result.properties, img:`https://starwars-visualguide.com/assets/img/${widget=="people"?"characters":widget}/${Id}.jpg`}
+					if(element[Id].planets){
+						element[Id].planets = element[Id].planets.map((elementPlanet)=>{
+							let arr = elementPlanet.split("/")
+							return {elementPlanet:arr.length-1}
+						})
+					}
+					if(element[Id].characters){
+						element[Id].charatcers = element[Id].characters.map((elementCharacter)=>{
+							let arr = elementCharacter.split("/")
+							return {elementCharacter:arr.length-1}
+						})
+					}
 					setStore({data:element})
 					console.log(data)
 				}
