@@ -7,14 +7,14 @@ import { Link } from "react-router-dom";
 
 export const PlanetDetail = () =>{
   const {store, actions}= useContext(Context);
-  const {widget, peopleId} = useParams()
-  const itemUrlTail = widget+"/"+peopleId;
-  const index = store.people.find(item=>item.id==peopleId)
-  const data = store.data && store.data[peopleId]
+  const {planetId} = useParams()
+  const itemUrlTail = "planets"+"/"+planetId;
+  const index = store.planets.find(item=>item.id==planetId)
+  const data = store.data && store.data[planetId]
 
   useEffect(()=>{
-    actions.fetchStarWars(widget)
-		actions.fetchStarWarsDetails(itemUrlTail, widget, peopleId)
+    actions.fetchStarWars("planets")
+		actions.fetchStarWarsDetails(itemUrlTail, "planets", planetId)
 	}, [])
 
   function imgError(e){
@@ -39,8 +39,8 @@ export const PlanetDetail = () =>{
               <li className="list-group-item">{data.height}</li>
               <li className="list-group-item">{data.mass}</li>
               <li className="list-group-item">{data.name}</li>
-              <h1>related Planet(s)</h1>
-              <img className="mx-auto px-auto" src={"https://starwars-visualguide.com/assets/img/planets/"+data.homeworld.slice(-2)+".jpg"} onError={imgError}></img>
+              {/* <h1>related Planet(s)</h1>
+              <img className="mx-auto px-auto" src={"https://starwars-visualguide.com/assets/img/planets/"+data.homeworld.slice(-2)+".jpg"} onError={imgError}></img> */}
           </ul>
           <div className="card-body">
               <Link to="/">

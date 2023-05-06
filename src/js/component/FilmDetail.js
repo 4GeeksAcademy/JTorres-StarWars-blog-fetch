@@ -12,12 +12,14 @@ export const CharacterDetail = () =>{
   const itemUrlTail = widget+"/"+filmId;
   const index = store.films.find(item=>item.id==filmId)
   const data = store.data && store.data[filmId]
+  const peopleData = store.people
   // const characters = data.characters
   
 
   useEffect(()=>{
     actions.fetchStarWars(widget)
 		actions.fetchStarWarsDetails(itemUrlTail, widget, filmId)
+    actions.fetchStarWars("people")
 	}, [])
 
   function imgError(e){
@@ -40,7 +42,16 @@ export const CharacterDetail = () =>{
               <li className="list-group-item">Producers (gods):{data.producer}</li>
           </ul>
           <h1>Related Characters</h1>
-          <p>{[data.elementCharacter]}</p>
+          <ul>
+            {data.characters?.map((character, index) => (
+              <Link to={`/people/${character.elementCharacter}`} key={index}>
+                <li>
+                  {/* {peopleData[index]?(item=>(<p>{item.name}</p>))} No funciona, la idea es hacer que se muestre el nombre del personaje en vez del numero*/}
+                   Related Character {character.elementCharacter}
+                </li>
+              </Link>
+            ))}
+          </ul>
           <div className="d-grid gap-2">
               <Link className="btn btn-outline-info" to="/">
               <button className="btn btn-outline-danger" type="button">Noob Mode</button>

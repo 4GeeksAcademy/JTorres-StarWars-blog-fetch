@@ -31,6 +31,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.error(error)
 				}
 			},
+			fetchStarWarsPeople:async(id, page = 1, limit = 21) =>{
+				let baseUrl = `https://www.swapi.tech/api/people/${id}?page=${page}&limit=${limit}`
+				try{
+					let response = await fetch(baseUrl)
+					if(!response.ok) return response.statu
+					setStore(widget)
+				}
+				catch (error){
+					console.error(error)
+				}
+			},
 			fetchStarWarsDetails:async(itemUrlTail, widget, Id)=>{
 				let baseUrl = `https://www.swapi.tech/api/${itemUrlTail}`
 				let imgUrl = `https://starwars-visualguide.com/assets/img/${itemUrlTail}/.jpg`
@@ -44,15 +55,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 					if(element[Id].planets){
 						element[Id].planets = element[Id].planets.map((elementPlanet)=>{
 							let arr = elementPlanet.split("/")
-							return {elementPlanet:arr.length-1}
+							return {elementPlanet:arr.length-1[-1]}
 						})
 					}
-					if(element[Id].characters){
-						element[Id].charatcers = element[Id].characters.map((elementCharacter)=>{
-							let arr = elementCharacter.split("/")
-							return {elementCharacter:arr.length-1}
-						})
-					}
+					if (element[Id].characters) {
+						element[Id].characters = element[Id].characters.map((elementCharacter) => {
+						  let arr = elementCharacter.split("/");
+						  getStore(elementCharacter);
+						  return { elementCharacter: arr[arr.length - 1] }; // Return the last item value instead of length
+						});
+					  }					  
 					setStore({data:element})
 					console.log(data)
 				}
