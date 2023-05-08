@@ -35,9 +35,7 @@ export const SpeciesCard = ({widget}) =>{
                         <div className="cardFooter card-body ms-auto px-auto">
                             <Link to={`${widget}/${item.uid}`}>
                             <button 
-                            className="btn btn-outline-info mx-4" 
-                            data-bs-toggle="modal" 
-                            data-bs-target="#nerdModal"
+                            className="btn btn-outline-info mx-4"
                             >Nerd Mode</button>
                             </Link>
                             

@@ -42,9 +42,9 @@ export const PlanetDetail = () =>{
               {/* <h1>related Planet(s)</h1>
               <img className="mx-auto px-auto" src={"https://starwars-visualguide.com/assets/img/planets/"+data.homeworld.slice(-2)+".jpg"} onError={imgError}></img> */}
           </ul>
-          <div className="card-body">
-              <Link to="/">
-              <button className="btn btn-outline-info">Noob Mode</button>
+          <div className="d-grid gap-2">
+              <Link className="btn btn-outline-info" to="/">
+              <button className="btn btn-outline-danger" type="button">Noob Mode</button>
               </Link>
           </div>
         </div>)}  
