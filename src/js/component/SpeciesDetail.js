@@ -31,7 +31,7 @@ export const SpeciesDetail = () =>{
           </svg></h1>:(<div>
           <h1>{data.name}</h1>
           <ul className="list-group list-group-flush">
-          <img className="mx-auto px-auto" src={data.img} onError={imgError}></img>
+          <img className="mx-auto px-auto img-fluid" src={data.img} onError={imgError}></img>
               <li className="list-group-item"><p>Eye Color: {data.eye_colors}</p></li>
               <li className="list-group-item">Hair Color: {data.hair_colors}</li>
               <li className="list-group-item">Classification:{data.classification}</li>
@@ -40,7 +40,7 @@ export const SpeciesDetail = () =>{
               <li className="list-group-item">Average Lifespan: {data.average_lifespan}</li>
               <li className="list-group-item">Language: {data.language}</li>
               <h1>Home Planet:</h1>
-              <img className="mx-auto px-auto" src={"https://starwars-visualguide.com/assets/img/planets/"+data.homeworld.slice(-2)+".jpg"} onError={imgError}></img>
+              <img className="mx-auto px-auto img-fluid" src={"https://starwars-visualguide.com/assets/img/planets/"+data.homeworld.slice(-2)+".jpg"} onError={imgError}></img>
           </ul>
           <div className="d-grid gap-2">
               <Link className="btn btn-outline-info" to="/">
@@ -49,49 +49,6 @@ export const SpeciesDetail = () =>{
           </div>
         </div>)}  
     </div>
-  )};
-//   average_height
-// : 
-// "180"
-// average_lifespan
-// : 
-// "120"
-// classification
-// : 
-// "mammal"
-// created
-// : 
-// "2023-05-08T05:31:01.445Z"
-// designation
-// : 
-// "sentient"
-// edited
-// : 
-// "2023-05-08T05:31:01.445Z"
-// eye_colors
-// : 
-// "brown, blue, green, hazel, grey, amber"
-// hair_colors
-// : 
-// "blonde, brown, black, red"
-// homeworld
-// : 
-// "https://www.swapi.tech/api/planets/1"
-// language
-// : 
-// "Galactic Basic"
-// name
-// : 
-// "Human"
-// people
-// : 
-// (4) ['https://www.swapi.tech/api/people/66', 'https://www.swapi.tech/api/people/67', 'https://www.swapi.tech/api/people/68', 'https://www.swapi.tech/api/people/74']
-// skin_colors
-// : 
-// "caucasian, black, asian, hispanic"
-// url
-// : 
-// "https://www.swapi.tech/api/species/1"
-   
+  )};  
     
     export default SpeciesDetail;
