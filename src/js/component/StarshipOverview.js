@@ -27,13 +27,13 @@ export const StarshipsOverview = () =>{
             <div key={item.uid} className="wholecard col card my-3" style={{maxHeight: "21rem"}}>
                 <img src={item.img} onError={imgError} className="card-img-top mx-0 p-0 img-fluid img-thumbnail overflow-auto" alt="CharacterImg"></img>
                 <div className="cardTitle card-body">
-                    <h5 className="cardTitle card-body">{item.name}</h5>
+                    <h5 className="cardTitle card-body"><strong>{item.name}</strong></h5>
                 </div>
                 <div className="cardFooter card-body ms-auto px-auto">
-                    <Link to={`${widget}/${item.uid}`}>
-                    <button 
-                    className="btn btn-outline-info mx-4" 
-                    >Nerd Mode</button>
+                    <Link to={`${item.uid}`}>
+                        <button className="btn btn-outline-info mx-4">
+                            Nerd Mode
+                        </button>
                     </Link>
                     
                     <button 

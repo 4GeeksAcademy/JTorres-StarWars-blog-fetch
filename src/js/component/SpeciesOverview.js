@@ -21,19 +21,19 @@ export const SpeciesOverview = () =>{
 
   return (
     <div className="container text-center">
-        <h1 className="m-auto my-5">species!</h1>
+        <h1 className="m-auto my-5">Species!</h1>
         <div className="row row-cols-4 mx-auto justify-content-center">
             {store[widget]?.map(item=>(
             <div key={item.uid} className="wholecard col card my-3 mx-3">
                 <img src={item.img} onError={imgError} className="card-img-top mx-0 p-0 overflow-hidden" alt="CharacterImg"></img>
                 <div className="cardTitle card-body">
-                    <h5 className="cardTitle card-body">{item.name}</h5>
+                    <h5 className="cardTitle card-body"><strong>{item.name}</strong></h5>
                 </div>
                 <div className="cardFooter card-body ms-auto px-auto">
-                    <Link to={`${widget}/${item.uid}`}>
-                    <button 
-                    className="btn btn-outline-info mx-4" 
-                    >Nerd Mode</button>
+                    <Link to={`${item.uid}`}>                       
+                        <button className="btn btn-outline-info mx-4">
+                            Nerd Mode
+                        </button>
                     </Link>
                     
                     <button 

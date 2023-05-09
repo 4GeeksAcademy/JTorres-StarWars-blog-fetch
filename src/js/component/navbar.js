@@ -6,9 +6,9 @@ export const Navbar = () => {
 	const {store, actions} = useContext(Context);
 
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav className="navbar navbar-light bg-light mb-3 sticky-top">
 			<Link to="/">
-			<div className="logo badge">
+			<div className="logo badge my-0 py-3">
 				<div className="title tc-yellow-400">Star Wars!</div>
 				<div className="subtitle">A fancy Guide x.x</div>
 			</div>

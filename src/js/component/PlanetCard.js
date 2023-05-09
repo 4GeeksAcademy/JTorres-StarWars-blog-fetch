@@ -25,7 +25,7 @@ export const PlanetCard = ({widget}) =>{
                     <div key={item.uid} className="wholecard card">
                         <img src={item.img} onError={imgError} className="card-img-top mx-0 p-0 overflow-hidden" alt="CharacterImg"></img>
                         <div className="cardTitle card-body">
-                            <h5 className="cardTitle card-body">{item.name}</h5>
+                            <h5 className="cardTitle card-body"><strong>{item.name}</strong></h5>
                         </div>
                         <div className="cardFooter card-body ms-auto px-auto">
                             <Link to={`${widget}/${item.uid}`}>

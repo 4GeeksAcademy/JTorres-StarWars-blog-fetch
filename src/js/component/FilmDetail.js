@@ -43,8 +43,8 @@ export const CharacterDetail = () =>{
         <ul className="list-group list-group-flush rounded">
         <img className="mx-auto px-auto img-fluid rounded mb-3" src={data.img} onError={imgError}></img>
             <li className="list-group-item rounded mb-1"><strong>Director: </strong>{data.director}</li>
-            <li className="list-group-item rounded mb-1"><strong>Episode number: </strong>{data.episode_id}</li>
-            <li className="list-group-item rounded mb-1"><strong>Producers (gods)<br/></strong>{data.producer}</li>
+            <li className="list-group-item rounded my-1"><strong>Episode number: </strong>{data.episode_id}</li>
+            <li className="list-group-item rounded mt-1"><strong>Producers (gods)<br/></strong>{data.producer}</li>
         </ul>
         <h1 className="d-flex justify-content-center align-items-center text-center m-5">
           Related Characters
@@ -59,7 +59,7 @@ export const CharacterDetail = () =>{
             </Link>
           ))}
         </ul>
-        <div className="d-grid gap-2">
+        <div className="d-grid gap-2 my-4">
             <Link className="btn btn-outline-info" to="/">
             <button className="btn btn-outline-danger" type="button">Noob Mode</button>
             </Link>

@@ -23,17 +23,17 @@ export const CharacterOverview = () =>{
     <div className="container text-center">
         <h1 className="mx-auto">Characters!</h1>
         <div className="row row-cols-4">
-    {store[widget]?.map(item=>(
-            <div key={item.uid} className="wholecard col card">
-                <img src={item.img} onError={imgError} className="card-img-top mx-0 p-0 overflow-hidden" alt="CharacterImg"></img>
+            {store[widget]?.map(item=>(
+            <div key={item.uid} className="wholecard col  my-3 rounded">
+                <img src={item.img} onError={imgError} className="card-img-top mx-0 p-0 overflow-hidden my-1 rounded" alt="CharacterImg"></img>
                 <div className="cardTitle card-body">
-                    <h5 className="cardTitle card-body">{item.name}</h5>
+                    <h5 className="cardTitle card-body"><strong>{item.name}</strong></h5>
                 </div>
                 <div className="cardFooter card-body ms-auto px-auto">
-                    <Link to={`${widget}/${item.uid}`}>
-                    <button 
-                    className="btn btn-outline-info mx-4" 
-                    >Nerd Mode</button>
+                    <Link to={`${item.uid}`}>
+                        <button className="btn btn-outline-info mx-4">
+                            Nerd Mode
+                        </button>
                     </Link>
                     
                     <button 
