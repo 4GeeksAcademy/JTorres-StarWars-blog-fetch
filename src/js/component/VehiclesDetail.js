@@ -19,7 +19,11 @@ export const VehiclesDetail = () =>{
 
   function imgError(e){
     e.target.src="https://starwars-visualguide.com/assets/img/placeholder.jpg"
-}
+  }
+
+  function verifyFavorite(itemId){
+    return store.favorites.some(item=>item.id==`${widget}/${itemId}`)
+  }
 
 return (
   <div className="wholecard w-100 card rounded mx-auto" style={{maxWidth:"40rem"}}>
@@ -52,10 +56,14 @@ return (
       {/* vehiculos con pilotos en arrray parece que no estan funcionando del lado del servidor */}
     </ul>
     <div className="d-grid gap-2">
-        <Link className="btn btn-outline-info my-4" to="/">
-        <button className="btn btn-outline-danger my-2" type="button">Noob Mode</button>
-        </Link>
-    </div>
+                <Link className="btn btn-outline-info mt-4 mb-0" to="/">
+                  <button className="btn btn-outline-danger my-2" type="button">Noob Mode</button>
+                </Link>
+                <button 
+                  className={`btn mt-0 mb-4 btn-${verifyFavorite(data.id)?"warning":"outline-warning"}`} 
+                  onClick={()=>actions.FavoriteChecked(`${widget}/${data.url?.slice(-2)}`, data.name)}
+                >♡</button>
+            </div>
 </div>)}  
   </div>
 )};

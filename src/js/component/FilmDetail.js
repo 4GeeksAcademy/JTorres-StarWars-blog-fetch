@@ -24,7 +24,11 @@ export const CharacterDetail = () =>{
 
   function imgError(e){
     e.target.src="https://starwars-visualguide.com/assets/img/placeholder.jpg"
-}
+  }
+
+  function verifyFavorite(itemId){
+    return store.favorites.some(item=>item.id==`${widget}/${itemId}`)
+  }
 
   return (
     <div className="wholecard w-100 card container-fluid mx-auto" style={{maxWidth:"40rem"}}>
@@ -59,11 +63,15 @@ export const CharacterDetail = () =>{
             </Link>
           ))}
         </ul>
-        <div className="d-grid gap-2 my-4">
-            <Link className="btn btn-outline-info" to="/">
-            <button className="btn btn-outline-danger" type="button">Noob Mode</button>
-            </Link>
-        </div>
+        <div className="d-grid gap-2">
+                <Link className="btn btn-outline-info mt-4 mb-0" to="/">
+                  <button className="btn btn-outline-danger my-2" type="button">Noob Mode</button>
+                </Link>
+                <button 
+                  className={`btn mt-0 mb-4 btn-${verifyFavorite(data.id)?"warning":"outline-warning"}`} 
+                  onClick={()=>actions.FavoriteChecked(`${widget}/${data.url?.slice(-2)}`, data.title)}
+                >♡</button>
+            </div>
       </div>)}  
     </div>
   )};

@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 export const PlanetDetail = () =>{
   const {store, actions}= useContext(Context);
   const {planetId} = useParams()
+  const widget ="planets"
   const itemUrlTail = "planets"+"/"+planetId;
   const index = store.planets.find(item=>item.id==planetId)
   const data = store.data && store.data[planetId]
@@ -19,6 +20,10 @@ export const PlanetDetail = () =>{
 
   function imgError(e){
     e.target.src="https://starwars-visualguide.com/assets/img/placeholder.jpg"
+}
+
+function verifyFavorite(itemId){
+  return store.favorites.some(item=>item.id==`${widget}/${itemId}`)
 }
 
   return (
@@ -49,10 +54,14 @@ export const PlanetDetail = () =>{
             <li className="list-group-item rounded my-1"><strong>Type of terrain</strong><br/>{data.terrain}</li>
           </ul>
           <div className="d-grid gap-2">
-              <Link className="btn btn-outline-info my-4" to="/">
-              <button className="btn btn-outline-danger my-2" type="button">Noob Mode</button>
-              </Link>
-          </div>
+                <Link className="btn btn-outline-info mt-4 mb-0" to="/">
+                  <button className="btn btn-outline-danger my-2" type="button">Noob Mode</button>
+                </Link>
+                <button 
+                  className={`btn mt-0 mb-4 btn-${verifyFavorite(data.id)?"warning":"outline-warning"}`} 
+                  onClick={()=>actions.FavoriteChecked(`${widget}/${data.url?.slice(-2)}`, data.name)}
+                >♡</button>
+            </div>
       </div>)}  
   </div>
 )};

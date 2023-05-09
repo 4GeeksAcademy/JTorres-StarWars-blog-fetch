@@ -18,6 +18,10 @@ export const SpeciesDetail = () =>{
 		actions.fetchStarWarsDetails(itemUrlTail, widget, speciesId)
 	}, [])
 
+  function verifyFavorite(itemId){
+    return store.favorites.some(item=>item.id==`${widget}/${itemId}`)
+  }
+
   function imgError(e){
     e.target.src="https://starwars-visualguide.com/assets/img/placeholder.jpg"
 }
@@ -45,9 +49,13 @@ export const SpeciesDetail = () =>{
               <img className="mx-auto px-auto img-fluid" src={"https://starwars-visualguide.com/assets/img/planets/"+data.homeworld?.slice(-2)+".jpg"} onError={imgError}></img>
           </ul>
           <div className="d-grid gap-2">
-              <Link className="btn btn-outline-info" to="/">
-              <button className="btn btn-outline-danger" type="button">Noob Mode</button>
+              <Link className="btn btn-outline-info mt-4 mb-0" to="/">
+                <button className="btn btn-outline-danger my-2" type="button">Noob Mode</button>
               </Link>
+              <button 
+                className={`btn mt-0 mb-4 btn-${verifyFavorite(data.id)?"warning":"outline-warning"}`} 
+                onClick={()=>actions.FavoriteChecked(`${widget}/${data.url?.slice(-2)}`, data.name)}
+              >♡</button>
           </div>
         </div>)}  
     </div>
