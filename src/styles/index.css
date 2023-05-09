@@ -3,6 +3,7 @@
 */
 .logo{
     font-family: "Silkscreen", sans-serif;
+    background: linear-gradient(1.25turn ,#3851b9, #32119c);
 }
 .footer{
     font-family: "Lobster", sans-serif;
@@ -35,4 +36,16 @@ li{
 }
 .description{
     font-family: "Lobster", sans-serif;
+}
+.cardTitle{
+    max-height: 5rem;
+}
+.cardFooter{
+    max-height: 5rem;
+}
+.cardDivVehicle{
+    max-height: 22rem;
+}
+.cardDivPlanet{
+    max-height: 29rem;
 }

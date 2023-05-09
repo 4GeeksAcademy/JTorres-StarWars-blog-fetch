@@ -1,5 +1,4 @@
 import React, { Component, useContext } from "react";
-import { NerdModal } from "./NerdModal";
 import { Context } from "../store/appContext.js";
 import { Link } from "react-router-dom";
 // import PropTypes from "prop-types";
@@ -21,24 +20,18 @@ export const PlanetCard = ({widget}) =>{
     
     
     return( 
-        <div className="d-flex">
+        <div className=" cardDivPlanet d-flex">
             {store[widget]?.map(item=>(
                     <div key={item.uid} className="wholecard card">
-                        <img src={item.img} onError={imgError} className="card-img-top mx-0 p-0" alt="CharacterImg"></img>
+                        <img src={item.img} onError={imgError} className="card-img-top mx-0 p-0 overflow-hidden" alt="CharacterImg"></img>
                         <div className="cardTitle card-body">
-                            <h5 className="card-title">{item.name}</h5>
-                            <p className="card-text">Nerdy stuffs</p>
+                            <h5 className="cardTitle card-body">{item.name}</h5>
                         </div>
-                        <ul className="list-group list-group-flush">
-                            <li className="list-group-item">Trait 1</li>
-                            <li className="list-group-item">Trait 2</li>
-                            <li className="list-group-item">Trait 3</li>
-                        </ul>
                         <div className="cardFooter card-body ms-auto px-auto">
                             <Link to={`${widget}/${item.uid}`}>
-                                <button 
-                                className="btn btn-outline-info mx-4" 
-                                >Nerd Mode</button>
+                            <button 
+                            className="btn btn-outline-info mx-4" 
+                            >Nerd Mode</button>
                             </Link>
                             
                             <button 

@@ -7,7 +7,7 @@ export const Navbar = () => {
 
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
-			<div className="logo">
+			<div className="logo badge">
 				<div className="title tc-yellow-400">Star Wars!</div>
 				<div className="subtitle">A fancy Guide x.x</div>
 			</div>
@@ -29,8 +29,4 @@ export const Navbar = () => {
 		</nav>
 	);
 };
-{/* <li><a className="dropdown-item" href="#">Fav1</a></li>
-<li><a className="dropdown-item" href="#">Fav 2</a></li>
-<li><a className="dropdown-item" href="#">Fav 3</a></li>
-<li><hr className="dropdown-divider"/></li>
-<li><a className="dropdown-item" href="#">Clear All</a></li> */}
+{/* <li><a className="dropdown-item" href="#">Clear All</a></li> */}
