@@ -40,7 +40,7 @@ export const SpeciesDetail = () =>{
               <li className="list-group-item">Average Lifespan: {data.average_lifespan}</li>
               <li className="list-group-item">Language: {data.language}</li>
               <h1>Home Planet:</h1>
-              <img className="mx-auto px-auto img-fluid" src={"https://starwars-visualguide.com/assets/img/planets/"+data.homeworld.slice(-2)+".jpg"} onError={imgError}></img>
+              <img className="mx-auto px-auto img-fluid" src={"https://starwars-visualguide.com/assets/img/planets/"+data.homeworld?.slice(-2)+".jpg"} onError={imgError}></img>
           </ul>
           <div className="d-grid gap-2">
               <Link className="btn btn-outline-info" to="/">

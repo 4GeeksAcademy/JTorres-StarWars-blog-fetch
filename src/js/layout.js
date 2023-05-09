@@ -3,8 +3,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
-import { Demo } from "./views/demo";
-import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -16,6 +14,11 @@ import PlanetDetail from "./component/PlanetDetail";
 import SpeciesDetail from "./component/SpeciesDetail";
 import FilmDetail from "./component/FilmDetail";
 import CharacterOverview from "./component/CharacterOverview";
+import PlanetOverview from "./component/PlanetOverview";
+import FilmOverview from "./component/FilmOverview";
+import StarshipsOverview from "./component/StarshipOverview";
+import SpeciesOverview from "./component/SpeciesOverview";
+import VehicleOverview from "./component/VehicleOverview";
 
 //create your first component
 const Layout = () => {
@@ -38,6 +41,11 @@ const Layout = () => {
 						<Route path ="/species/:speciesId" element={<SpeciesDetail />} />
 						<Route path ="/films/:filmId" element={<FilmDetail />} />
 						<Route path ="/people/" element={<CharacterOverview />} />
+						<Route path ="/planets/" element={<PlanetOverview />} />
+						<Route path ="/films/" element={<FilmOverview />} />
+						<Route path ="/starships/" element={<StarshipsOverview />} />
+						<Route path ="/species/" element={<SpeciesOverview />} />
+						<Route path ="/vehicles/" element={<VehicleOverview />} />
 					</Routes>
 					<Footer />
 				</ScrollToTop>

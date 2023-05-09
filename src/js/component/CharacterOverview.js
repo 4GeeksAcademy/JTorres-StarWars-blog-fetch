@@ -20,7 +20,9 @@ export const CharacterOverview = () =>{
 	}, [])
 
   return (
-    <div className="container d-grid">
+    <div className="container text-center">
+        <h1 className="mx-auto">Characters!</h1>
+        <div className="row row-cols-4">
     {store[widget]?.map(item=>(
             <div key={item.uid} className="wholecard col card">
                 <img src={item.img} onError={imgError} className="card-img-top mx-0 p-0 overflow-hidden" alt="CharacterImg"></img>
@@ -39,10 +41,10 @@ export const CharacterOverview = () =>{
                     onClick={()=>actions.FavoriteChecked(`${widget}/${item.uid}`, item.name)}
                     >♡</button>
                 </div>
-            </div>
+            </div>    
     ))|| <h1>loading...</h1>}
+        </div>
     </div>
-        )};
-
+    )};
 
   export default CharacterOverview;

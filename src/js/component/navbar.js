@@ -7,10 +7,12 @@ export const Navbar = () => {
 
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
+			<Link to="/">
 			<div className="logo badge">
 				<div className="title tc-yellow-400">Star Wars!</div>
 				<div className="subtitle">A fancy Guide x.x</div>
 			</div>
+			</Link>
 			<div className="dropstart btn-group ml-auto pe-5">
 				<button type="button" className="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 					<strong>Favorites UwU</strong>
