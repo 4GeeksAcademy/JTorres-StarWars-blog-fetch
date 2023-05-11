@@ -41,9 +41,23 @@ export const CharacterOverview = () =>{
                     onClick={()=>actions.FavoriteChecked(`${widget}/${item.uid}`, item.name)}
                     >♡</button>
                 </div>
+                
             </div>    
     ))|| <h1>loading...</h1>}
         </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                <a class="page-link">Previous</a>
+                </li>
+                <li class="page-item"><a onClick={()=>actions.fetchStarWars("people", 1, 21)} class="page-link" href="#">1</a></li>
+                <li class="page-item"><a onClick={()=>actions.fetchStarWars("people", 2, 21)} class="page-link" href="#">2</a></li>
+                <li class="page-item"><a onClick={()=>actions.fetchStarWars("people", 3, 21)} class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
     </div>
     )};
 

@@ -57,7 +57,7 @@ export const CharacterDetail = () =>{
           {data.characters?.map((character, index) => (
             <Link to={`/people/${character.elementCharacter}`} key={index}>
               <li>
-                {/* {peopleData[index]?(item=>(<p>{item.name}</p>))} No funciona, la idea es hacer que se muestre el nombre del personaje en vez del numero*/}
+                {peopleData[index]?(item=>(<p>{item.name}</p>)):"item.name"}
                   Related Character {character.elementCharacter}
               </li>
             </Link>

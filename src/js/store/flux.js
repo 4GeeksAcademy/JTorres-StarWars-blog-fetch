@@ -102,7 +102,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let {favorites} = getStore()
 				let newFavorites=[{}]
 				setStore({favorites:newFavorites})
-				console.log(itemIndex)
 				console.log(favorites)
 			}
 		}

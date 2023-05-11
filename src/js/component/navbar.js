@@ -26,6 +26,7 @@ export const Navbar = () => {
 							</div>
 						)
 					})||<p>How about adding favorites?</p>}
+					<li><a className="dropdown-item" onClick={()=>{actions.deleteAllFavorites()}}>Clear All</a></li>
 				</ul>
 				</div>
 		</nav>

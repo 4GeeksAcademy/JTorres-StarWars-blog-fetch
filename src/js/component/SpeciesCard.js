@@ -47,6 +47,7 @@ export default SpeciesCard;
 //     name: PropTypes.string,
 //     uid: PropTypes.string,/
 //     url: PropTypes.string
+
 // }
 
 // (store.people)?.map(widget => ( 
