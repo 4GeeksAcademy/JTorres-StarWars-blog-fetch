@@ -46,16 +46,17 @@ export const CharacterOverview = () =>{
     ))|| <h1>loading...</h1>}
         </div>
         <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                <a class="page-link">Previous</a>
-                </li>
-                <li class="page-item"><a onClick={()=>actions.fetchStarWars("people", 1, 21)} class="page-link" href="#">1</a></li>
-                <li class="page-item"><a onClick={()=>actions.fetchStarWars("people", 2, 21)} class="page-link" href="#">2</a></li>
-                <li class="page-item"><a onClick={()=>actions.fetchStarWars("people", 3, 21)} class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-                </li>
+            <ul className="pagination justify-content-center">
+                {/* <li className="page-item disabled">
+                <a className="page-link">Previous</a>
+                </li> */}
+                <li className="page-item"><a onClick={()=>actions.fetchStarWars("people", 1, 21)} className="page-link" href="#">1</a></li>
+                <li className="page-item"><a onClick={()=>actions.fetchStarWars("people", 2, 21)} className="page-link" href="#">2</a></li>
+                <li className="page-item"><a onClick={()=>actions.fetchStarWars("people", 3, 21)} className="page-link" href="#">3</a></li>
+                <li className="page-item"><a onClick={()=>actions.fetchStarWars("people", 4, 21)} className="page-link" href="#">4</a></li>
+                {/* <li className="page-item">
+                <a className="page-link" href="#">Next</a>
+                </li> */}
             </ul>
         </nav>
     </div>

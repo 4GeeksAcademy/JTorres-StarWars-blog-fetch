@@ -19,7 +19,7 @@ export const CharacterDetail = () =>{
   useEffect(()=>{
     actions.fetchStarWars(widget)
 		actions.fetchStarWarsDetails(itemUrlTail, widget, filmId)
-    actions.fetchStarWars("people")
+    actions.fetchStarWars("people", 1, 82)
 	}, [])
 
   function imgError(e){
@@ -57,8 +57,7 @@ export const CharacterDetail = () =>{
           {data.characters?.map((character, index) => (
             <Link to={`/people/${character.elementCharacter}`} key={index}>
               <li>
-                {peopleData[index]?(item=>(<p>{item.name}</p>)):"item.name"}
-                  Related Character {character.elementCharacter}
+                {peopleData[character.elementCharacter - 1]?.name}
               </li>
             </Link>
           ))}
