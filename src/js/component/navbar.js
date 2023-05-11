@@ -32,4 +32,3 @@ export const Navbar = () => {
 		</nav>
 	);
 };
-{/* <li><a className="dropdown-item" href="#">Clear All</a></li> */}
