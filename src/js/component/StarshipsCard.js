@@ -19,7 +19,7 @@ export const StarshipsCard = ({widget}) =>{
     return( 
         <div className="d-flex">
         {store[widget]?.map(item=>(
-                <div key={item.uid} className="wholecard card">
+                <div key={item.uid} className="wholecard card" style={{maxHeight:"23rem"}}>
                     <img src={item.img} onError={imgError} className="card-img-top mx-0 p-0 overflow-hidden" alt="CharacterImg"></img>
                     <div className="cardTitle card-body">
                         <h5 className="cardTitle card-body"><strong>{item.name}</strong></h5>
