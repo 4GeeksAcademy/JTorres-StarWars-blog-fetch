@@ -35,7 +35,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let baseUrl = `https://www.swapi.tech/api/people/${id}?page=${page}&limit=${limit}`
 				try{
 					let response = await fetch(baseUrl)
-					if(!response.ok) return response.statu
+					if(!response.ok) return response.status
 					setStore(widget)
 				}
 				catch (error){
